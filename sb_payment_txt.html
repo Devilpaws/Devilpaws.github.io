@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      New Perspectives on HTML5 and CSS3, 8th Edition
+      Tutorial 7
+      Case Problem 2
+
+      Spice Bowl Payment Form
+      Author: Macheya Downey-Jacquard
+      Date:   July 20, 2021
+
+      Filename:   sb_payment.html
+
+      pages #599 and #600
+   -->
+   
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Spice Bowl Payment Form</title>
+   <link href="sb_reset.css" rel="stylesheet" />
+   <link href="sb_styles.css" rel="stylesheet" />
+   <link href= "sb_forms.css" rel= "stylesheet" />
+   <link href= "sb_validate_txt.css" rel= "stylesheet" />
+   <script src= "sb_script.js" ></script>
+</head>
+
+<body>
+   <header>
+      <img src="sb_logo.png" alt="The Spice Bowl" />
+
+      <form action= "http://www.example.com/sb/login" method="POST" id= "Login">
+         <input id= "userBox" placeholder="username"></input>
+         <input id= "pwdBox" placeholder="Password"></input>
+      </form>
+
+      <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
+         <ul>
+            <li><a href="#">Spices</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">My Cart</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </header>
+   
+   <section>
+      <h1>Payment Form</h1>
+
+      <form action= "http://www.example.com/sb/payment" method="POST" id= "payment">
+         <fieldset id= "Billing" ><legend>Billing Information (required)</legend>
+            <label>First Name</label><input id= "firstBox" data-field="fName" type= "text" required>
+            <label>Last Name</label><input id= "lastBox" data-field="lName" type= "text" required>
+            <label>Street Address</label><input id= "streetBox" data-field="street" type= "text" required>
+            <label>Street Address (2)</label><input id= "streetBox2" data-field="street2" type= "text">
+            <label>City</label><input id= "cityBox" data-field="city" type= "text" required>
+            <label>State</label><input id= "stateBox" data-field="state" type= "text" required>
+            <datalist id= "statelist">
+               <option value= "CA"> <option value= "MN"> <option value= "MO"> <option value= "NV">
+               <option value= "NC"> <option value= "NY"> <option value= "OH"> <option value= "RI">
+               <option value= "TX"> <option value= "WV">
+            </datalist>
+            <label>ZIP/Postal Code</label><input id= "zipBox" data-field="zip" type= "text" pattern="^\d{5}(-\d{4})?$">
+            <label>Country</label><input id= "countryBox" data-field="country" type= "text" requird value="United States">
+            <label>Phone</label><input id= "phoneBox" data-field="phone" type= "tel" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+         </fieldset>
+         <fieldset id= "Credit Card"><legend>Credit Card (requird)</legend>
+            <fieldset>
+               <label for= "amex" class= "cardLabel"><img src= "sb_amex.png" alt= "amex"><input type= "radio" id= "amex" name= "q1"></label>
+               <label for= "discover" class= "cardLabel"><img src= "sb_discover.png" alt= "discover"><input type= "radio" id= "discover" name= "q1"></label>
+               <label for= "master" class= "cardLabel"><img src= "sb_master.png" alt= "master"><input type= "radio" id= "master" name= "q1"></label>
+               <label for= "visa" class= "cardLabel"><img src= "sb_visa.png" alt= "visa"><input type= "radio" id= "visa" name= "q1"></label>
+            </fieldset>
+         <label for= "cardBox">Credit Card Number</label>
+         <input type="text" id= "cardBox" field= "cardNumber required" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
+         <label for= "monthList">Experation Date</label>
+         <select id= "monthList" required field= "cardMonth">
+            <option value= "">--Month--</option>
+            <option month value="1">January (1)</option>
+            <option month value="2">February (2)</option>
+            <option month value="3">March (3)</option>
+            <option month value="4">April (4)</option>
+            <option month value="5">May (5)</option>
+            <option month value="6">June (6)</option>
+            <option month value="7">July (7)</option>
+            <option month value="8">Augest (8)</option>
+            <option month value="9">September (9)</option>
+            <option month value="10">October (10)</option>
+            <option month value="11">November (11)</option>
+            <option month value="12">December (12)</option>
+         </select>
+         <select id= "yearList" required field= "cardYear">
+            <option value= "">--year--</option>
+            <option value= "2020">2020</option>
+            <option value= "2021">2021</option>
+            <option value= "2022">2022</option>
+            <option value= "2023">2023</option>
+            <option value= "2024">2024</option>
+         </select>
+         <label for= "cscBox">CSC</label>
+         <input id= "cscBox" for= "csc" pattern= "^\d{3}$" maxlength="3" placeholder="nnn">
+      </fieldset>
+         <button><img src= "sb_button.png" alt= "next"></button>
+      </form>
+      
+      <aside>
+         <h1>Menu Ideas</h1>
+         <h2>Salt-Roasted Pecans</h2>
+         <ul>
+            <li>2 cups pecans</li>
+            <li>3 Tbs. butter, melted</li>
+            <li>1 1/4 tsp. fine sea salt</li>
+         </ul>
+         <p>Preheat oven to 325&deg;. Toss pecans and butter together; 
+            add salt and toss again.  Spread in a single layer on a baking 
+            sheet.  Bake about 15 minutes.  Cook on baking sheet.
+         </p>
+
+         <h2>Dried Beef Sticks</h2>
+         <ul>
+            <li>5 lbs. ground chuck</li>
+            <li>5 Tbs. quick salt</li>
+            <li>3 tsp. mustard seed</li>
+            <li>2 tsp. granulated garlic</li>
+            <li>2 tsp. cracked pepper</li>
+            <li>1 Tbs. hickory smoked salt</li>
+            <li>1 Tbs. liquid smoke</li>
+         </ul>
+         <p>Mix beef and season.  Place in a large covered container 
+            for three days.  
+            On third day, shape beef into sticks, and bake at 150&deg; for 
+            8 hours (turn half-way through).
+         </p>
+      </aside>
+      
+   </section>
+
+   <footer>
+      <nav>
+         <ul>
+            <li class="newgroup"><a href="#">Home</a></li>
+            <li><a href="#">Keyword Search</a></li>
+      
+            <li class="newgroup"><a href="#">Spices</a></li>
+            <li><a href="#">Seasonings</a></li>
+            <li><a href="#">Blends</a></li>
+            <li><a href="#">Salts &amp; Peppers</a></li>
+            <li><a href="#">Popcorn Seasonings</a></li>
+            <li><a href="#">Dip Mixes</a></li>
+            <li><a href="#">Bulk Spices</a></li>
+            <li><a href="#">Extracts</a></li>
+            <li><a href="#">Flavorings</a></li>
+      
+            <li class="newgroup"><a href="#">Spice Jars</a></li>
+            <li><a href="#">Spice Jar Labels</a></li>
+            <li><a href="#">Spice Sets</a></li>
+            <li><a href="#">Mortar &amp; Pestles</a></li>
+      
+            <li class="newgroup"><a href="#">Cookbooks</a></li>
+            <li><a href="#">Online Recipes</a></li>
+            <li><a href="#">Forums</a></li>
+      
+            <li class="newgroup"><a href="#">My Account</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Shipping Info</a></li>
+      
+            <li class="newgroup"><a href="#">Tech Support</a></li>
+            <li><a href="#">Hours</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </footer>         
+</body>
+</html>
